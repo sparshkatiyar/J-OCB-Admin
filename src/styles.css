@@ -23,8 +23,19 @@ body{
 }
 
 
-.mat-raised-button.mat-primary{
+.mat-raised-button.mat-primary, 
+.mat-calendar-body-selected{
     background:linear-gradient(98.97deg, #FD7208 5.15%, #FC9002 105.73%)!important;
+}
+
+.mat-calendar-body-in-range::before {
+    background: #fc900268!important;
+}
+
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover>.mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
+    background: #fd7208a1!important;
+
 }
 
 .mat-drawer-content {
