@@ -13,14 +13,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
 
 /********************************** authentication css ***************************************/
 
-/* :root{
-    --primary-btn-color: 
-} */
+:root{
+    /* --primary-btn-color:  */
+    --primary-color:#FD7208;
+}
 
 html,
 body{
     height: 100%;
 }
+
 
 
 .mat-raised-button.mat-primary, 
@@ -141,6 +143,20 @@ td.mat-cell{
 .mat-dialog-actions {
     min-height: auto;
 }
+
+
+
+
+/* otp  */
+.otp-input{
+  font-size: 20px!important;
+  color: var(--primary-color)!important;
+}
+
+.otp-input:focus-visible{
+  outline: 1px solid var(--primary-color);
+}
+
 
 
 
