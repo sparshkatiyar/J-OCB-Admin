@@ -1,0 +1,38 @@
+<!-- <app-header></app-header> -->
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar>
+            <div class="sidenav-logo text-center">
+                <img src="assets/images/logo-light.png" alt="logo" class="w-75">
+            </div>
+
+
+
+        </mat-toolbar>
+
+        <app-sidenav></app-sidenav>
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary" class="justify-content-between">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+
+
+            <button type="button" routerLink="/login" matTooltip="Logout" mat-icon-button>
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+
+
+            <!-- <span>admin</span> -->
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <router-outlet></router-outlet>
+
+    </mat-sidenav-content>
+</mat-sidenav-container>

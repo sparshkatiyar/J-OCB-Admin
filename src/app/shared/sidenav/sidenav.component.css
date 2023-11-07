@@ -1,0 +1,26 @@
+/* 
+.active{
+    background-color: #f3f3f3;
+    color: #000;
+}
+   */
+
+
+   .list-group-item.active {
+    z-index: 2;
+    color: #fff;
+    /* background:linear-gradient(98.97deg, #FD7208 5.15%, #FC9002 105.73%)!important; */
+    /* background: linear-gradient(98.97deg, #fd72083d 5.15%, #FC9002 105.73%)!important; */
+    background: linear-gradient(98.97deg, #FD7208 5.15%, #fc900214 105.73%)!important;
+    border: none;
+}
+
+.list-group-item{
+    border-radius: 0px;
+    /* margin-bottom: 5px; */
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+
+}

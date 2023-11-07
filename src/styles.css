@@ -1,0 +1,148 @@
+/* You can add global styles to this file, and also import other style files */
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/********************************** authentication css ***************************************/
+
+/* :root{
+    --primary-btn-color: 
+} */
+
+html,
+body{
+    height: 100%;
+}
+
+
+.mat-raised-button.mat-primary{
+    background:linear-gradient(98.97deg, #FD7208 5.15%, #FC9002 105.73%)!important;
+}
+
+.mat-drawer-content {
+    background: #f3f3f3!important;
+}
+
+.mat-toolbar.mat-primary {
+    background: #fff;
+    color: #000;
+}
+
+
+.main-heading h3{
+    margin-bottom: 0;
+}
+
+
+
+
+  
+
+
+
+
+
+
+/****************************** material table custom css start **************************/
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+
+table {
+    width: 100%;  
+}
+
+th.mat-header-cell {
+    color: #fff!important;
+    font-size: 14px;
+}
+
+td.mat-cell{
+    font-size: 12px;
+}
+  
+   /* tr:nth-child(odd) {background-color: #f2f2f2;} */
+  .mat-row:nth-child(even){
+    background: #F3F3F3 0% 0% no-repeat padding-box;
+  }
+        
+  .mat-row:nth-child(odd){
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+  }
+  
+  
+  th.mat-header-cell,
+  td.mat-cell,
+  td.mat-footer-cell {
+      padding: 0;
+      text-align: center!important;
+      min-width: 100px;
+      border-bottom-width: 0px!important;
+      border-bottom-style: none!important;
+  }
+  
+  th.mat-header-cell:first-of-type,
+  td.mat-cell:first-of-type,
+  td.mat-footer-cell:first-of-type {
+      padding-left: 24px;
+      min-width: 50px;
+  }
+  
+  
+  tr.mat-header-row{
+    /* background:linear-gradient(98.97deg, #FD7208 5.15%, #FC9002 105.73%)!important; */
+    background: linear-gradient(135deg, #FD7208 5.15%, #000000 105.73%)!important;
+
+  }
+
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0px!important;
+}
+
+.mat-paginator .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1.25em!important;
+}
+
+
+
+.action-head{
+    min-width: 60px;
+    max-width: 60px;
+    font-size: 11px;
+  }
+
+.action-icon mat-icon{
+    cursor: pointer;
+}
+
+
+.mat-dialog-actions {
+    min-height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:425px){
+    .left-bg{
+        display: none!important;
+    }
+}
+  

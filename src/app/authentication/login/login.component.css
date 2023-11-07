@@ -1,0 +1,65 @@
+.auth-logo img {
+    width: 50%;
+}
+
+.card-header{
+    border-bottom: none;
+}
+
+.authentication{
+    overflow: hidden;
+}
+
+
+.left-auth-logo img{
+    width: 25%;
+}
+
+
+.auth-logo img{
+    width: 30%;
+}
+
+
+
+.auth-box .card{
+    background: transparent;
+    border: none;
+}
+
+.auth-box-left-text {
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+
+
+}
+
+.auth-box-left-text h1 {
+    font-weight: 800;
+}
+
+
+
+
+.left-bg{
+    background: linear-gradient(180deg, #1A1A1D 8.02%, #695033 69.19%);
+}
+
+
+.auth-btn a{
+    text-decoration: none;
+}
+
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+    -webkit-border:none !important;
+    font-family: 'Poppins', sans-serif;
+    -webkit-text-fill-color: #000;    
+    /* background-color: #000!important; */
+  }
+
+  .card-header{
+    background: none;
+  }
