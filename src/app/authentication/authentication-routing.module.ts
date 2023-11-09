@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'login', component:LoginComponent},
   {path:'forget-password', component:ForgetPasswordComponent},
-  {path:'change-password', component:ChangePasswordComponent},
+  {path:'change-password/:email', component:ChangePasswordComponent},
   {path:'otp', component:OtpComponent},
 
 
