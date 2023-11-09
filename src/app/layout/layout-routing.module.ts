@@ -9,8 +9,8 @@ const routes: Routes = [
   {path:'', component:LayoutComponent, children:[
     {path:'',redirectTo:'dashboard',pathMatch:'full'},
     {path:'dashboard', component:DashboardComponent},
-    {path:'user-mgmt', component:UserMgmtComponent},
-    {path:'table-tab-mgmt', component:TableTabMgmtComponent},
+    // {path:'user-mgmt', component:UserMgmtComponent},
+    {path:'user-mgmt', component:TableTabMgmtComponent},
 
 
   ]}

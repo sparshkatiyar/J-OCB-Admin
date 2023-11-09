@@ -14,6 +14,10 @@ export class ApiService {
   post(url:any,data:any):Observable<any>{
     return this.http.post(`${this.baseUrl}/v1/admin/${url}`,data)
   }
+  
+  patch(url:any,data:any):Observable<any>{
+    return this.http.post(`${this.baseUrl}/v1/admin/${url}`,data)
+  }
 
   get(url:any):Observable<any>{
      return this.http.get(`${this.baseUrl}/v1/admin/${url}`)

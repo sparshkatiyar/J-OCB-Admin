@@ -4,6 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { DeleteComponent } from '../dialog/delete/delete.component';
+import { ApiService } from 'src/app/service/api.service';
 
 export interface UserData {
   id: string;
@@ -33,7 +34,7 @@ export class UserMgmtComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor( public dialog :MatDialog ) {
+  constructor( public dialog :MatDialog, private api : ApiService ) {
     // Create 100 users
     const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
 
@@ -41,6 +42,9 @@ export class UserMgmtComponent implements AfterViewInit {
     this.dataSource = new MatTableDataSource(users);
   }
 
+  ngOnInit(){
+    this.getData()
+  }
 
   deletDialog(){
     let dialogRef = this.dialog.open(DeleteComponent, {
@@ -65,6 +69,14 @@ export class UserMgmtComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  getData(){
+    this.api.get('user-list').subscribe({
+      next : (res : any)=>{
+        console.log(res)
+      }
+    })
+  }
+
 }
 
 /** Builds and returns a new User. */
@@ -78,4 +90,5 @@ function createNewUser(id: number): UserData {
     progress: Math.round(Math.random() * 100).toString(),
     fruit: FRUITS[Math.round(Math.random() * (FRUITS.length - 1))]
   };
+
 }
