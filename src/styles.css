@@ -157,7 +157,31 @@ td.mat-cell{
   outline: 1px solid var(--primary-color);
 }
 
+.mat-tab-body-content{
+    overflow: hidden!important;
+}
 
+.mat-tab-group.mat-primary .mat-ink-bar{
+    background:linear-gradient(98.97deg, #FD7208 5.15%, #FC9002 105.73%)!important;
+}
+
+mat-tab-header {
+    border-bottom: none!important;
+}
+
+.modal.fade.show {
+    backdrop-filter: blur(4px);
+    background-color: #01223770;
+  }
+  
+
+  .modal-backdrop {
+    z-index: 0!important;
+  }
+  
+  .mat-drawer.mat-drawer-side {
+    z-index: 0!important;
+  }
 
 
 

@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { UserMgmtComponent } from './user-mgmt/user-mgmt.component';
 import { DeleteComponent } from './dialog/delete/delete.component';
+import { TableTabMgmtComponent } from './table-tab-mgmt/table-tab-mgmt.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { DeleteComponent } from './dialog/delete/delete.component';
     DashboardComponent,
     UserMgmtComponent,
     DeleteComponent,
+    TableTabMgmtComponent,
   ],
   imports: [
     CommonModule,
