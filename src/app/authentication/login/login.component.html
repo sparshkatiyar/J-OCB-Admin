@@ -35,36 +35,26 @@
                         </div>
 
                         <div class="card-body">
-                        
+                            <form [formGroup]="LoginForm"> 
+                                <div class="example-container">
 
-                            <div class="example-container">
-
-                                <mat-form-field appearance="outline" class="w-100 mb-4">
-                                    <mat-label>Email ID</mat-label>
-                                    <input matInput placeholder="Enter Email ID">
-                                </mat-form-field>
-
-
-
-                                <mat-form-field appearance="outline" class="w-100 mb-4">
-                                  <mat-label>Enter your password</mat-label>
-                                  <input matInput [type]="hide ? 'password' : 'text'">
-                                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                                  </button>
-                                </mat-form-field>
-
-
-                            </div>
-
-
-                            <div class="auth-btn">
-                                <button mat-raised-button color="primary" class="w-100 mb-2 py-1" routerLink="/home/dashboard" >Submit</button>
-                                <a href="javascript:void(0)" class="d-block text-end" routerLink="/forget-password">Forget Password ?</a>
-
-                            </div>
-
-                            
+                                    <mat-form-field appearance="outline" class="w-100 mb-4">
+                                        <mat-label>Email ID</mat-label>
+                                        <input matInput placeholder="Enter Email ID" formControlName = "email">
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline" class="w-100 mb-4">
+                                      <mat-label>Enter your password</mat-label>
+                                      <input matInput [type]="hide ? 'password' : 'text'" formControlName = "password">
+                                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                      </button>
+                                    </mat-form-field>
+                                </div>
+                                <div class="auth-btn">
+                                    <button mat-raised-button color="primary" class="w-100 mb-2 py-1" (click)="login()">Submit</button>
+                                    <a href="javascript:void(0)" class="d-block text-end" routerLink="/forget-password">Forget Password ?</a>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

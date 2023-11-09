@@ -9,6 +9,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { OtpComponent } from './otp/otp.component';
 
 import { NgOtpInputModule } from  'ng-otp-input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -20,7 +21,9 @@ import { NgOtpInputModule } from  'ng-otp-input';
     CommonModule,
     AuthenticationRoutingModule,
     MaterialModule,
-    NgOtpInputModule
+    NgOtpInputModule,
+    ReactiveFormsModule,
+    FormsModule,
   ]
 })
 export class AuthenticationModule { }
