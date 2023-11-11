@@ -12,6 +12,10 @@ import { TableTabMgmtComponent } from './table-tab-mgmt/table-tab-mgmt.component
 import { ProfileComponent } from './profile/profile.component';
 import { ChangePasswordComponent } from './dialog/change-password/change-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookingMgmtComponent } from './booking-mgmt/booking-mgmt.component';
+import { CommissionMgmtComponent } from './commission-mgmt/commission-mgmt.component';
+import { OfferMgmtComponent } from './offer-mgmt/offer-mgmt.component';
+import { NotificationMgmtComponent } from './notification-mgmt/notification-mgmt.component';
 
 
 @NgModule({
@@ -23,6 +27,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     TableTabMgmtComponent,
     ProfileComponent,
     ChangePasswordComponent,
+    BookingMgmtComponent,
+    CommissionMgmtComponent,
+    OfferMgmtComponent,
+    NotificationMgmtComponent,
   ],
   imports: [
     CommonModule,

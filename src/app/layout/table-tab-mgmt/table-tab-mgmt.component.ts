@@ -86,8 +86,9 @@ export class TableTabMgmtComponent implements OnInit {
     }
   }
   SearchForDriver(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource2.filter = filterValue.trim().toLowerCase();
+    console.log(event)
+    const filterValue1 = (event.target as HTMLInputElement).value;
+    this.dataSource2.filter = filterValue1.trim().toLowerCase();
 
     if (this.dataSource2.paginator) {
       this.dataSource2.paginator.firstPage();
