@@ -26,5 +26,8 @@ constructor(private breakpointObserver: BreakpointObserver, private router : Rou
     sessionStorage.removeItem('OJCB');
     this.router.navigateByUrl('login')
   }
+  profile(){
+    this.router.navigateByUrl('home/profile')
+  }
 
 }

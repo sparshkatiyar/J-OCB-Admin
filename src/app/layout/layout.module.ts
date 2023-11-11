@@ -9,6 +9,9 @@ import { MaterialModule } from '../material/material.module';
 import { UserMgmtComponent } from './user-mgmt/user-mgmt.component';
 import { DeleteComponent } from './dialog/delete/delete.component';
 import { TableTabMgmtComponent } from './table-tab-mgmt/table-tab-mgmt.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ChangePasswordComponent } from './dialog/change-password/change-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,12 +21,16 @@ import { TableTabMgmtComponent } from './table-tab-mgmt/table-tab-mgmt.component
     UserMgmtComponent,
     DeleteComponent,
     TableTabMgmtComponent,
+    ProfileComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     CommonModule,
     LayoutRoutingModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class LayoutModule { }

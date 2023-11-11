@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   error:any
   loginData: any;
   submitted: Boolean = false;
-  constructor(private api : ApiService, private router : Router) {}
+  constructor(private api : ApiService, private router : Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {
   }
@@ -33,6 +34,7 @@ export class LoginComponent implements OnInit {
         this.loginData =  res.data
         sessionStorage.setItem('OJCB', JSON.stringify(this.loginData));
         this.router.navigateByUrl("/home/dashboard")
+        this.toastr.success("Admin login successfully.")
       }, 
       error : (err : any) =>{
         console.log(err.error.message)
