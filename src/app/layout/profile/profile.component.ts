@@ -11,15 +11,21 @@ import { ApiService } from 'src/app/service/api.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  adminDatas: any;
 
   constructor( public dialog :MatDialog,  private toastr: ToastrService, private api : ApiService) { }
 
   adminData : any
   ngOnInit(): void {
+
+  setTimeout(() => {
+    setTimeout(() => {
+      this.patchFormField()
+    }, 1000);    
     this.adminData = JSON.parse(sessionStorage.getItem('OJCB') || '')
-    console.log(this.adminData)
-    this.patchFormField()
-  }
+    console.log(this.adminData)  
+  }, 1500);  
+}
 
   profileForm = new FormGroup({
     name : new FormControl('', Validators.required),
@@ -34,17 +40,24 @@ export class ProfileComponent implements OnInit {
   }
 
   updateAdminProfile(){
-    let data =  this.profileForm.value.name
+    let data = {
+      name : this.profileForm.value.name
+    }  
     console.log(data)
     this.api.post('update-admin', data).subscribe({
       next : (res : any) =>{
         console.log(res)
+        this.adminDatas = res.data[0]
+        sessionStorage.setItem('OJCB', JSON.stringify(this.adminDatas))
+        this.toastr.success(res.message)
+        window.location.reload()
+      },error :(err) =>{
+        console.log(err)
       }
     })
   }
   changePassword(){
     let dialogRef = this.dialog.open(ChangePasswordComponent, {
-
     });
   }
 }

@@ -160,8 +160,10 @@ export class TableTabMgmtComponent implements OnInit {
   }
 
   activeInactive(id: any, event: MatSlideToggleChange) {
+    debugger
     let data = {
       id: id,
+      // is_active: event.checked,
       is_active: event.checked,
       is_delete: false,
     };
@@ -179,6 +181,7 @@ export class TableTabMgmtComponent implements OnInit {
   activeInactiveDriver(id: any, event: MatSlideToggleChange) {
     let data = {
       id: id,
+      // is_active: event.checked,
       is_active: event.checked,
       is_delete: false,
     };
