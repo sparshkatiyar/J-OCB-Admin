@@ -1,0 +1,21 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-container.column {
+    flex-direction: column;
+  }
+  
+  .flex-item {
+    margin: 0 10px; /* Adjust as needed */
+  }
+  
+  @media screen and (max-width: 600px) {
+    .flex-container,
+    .flex-container.column {
+      flex-direction: column;
+    }
+  }
+  

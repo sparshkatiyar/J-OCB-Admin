@@ -1,1 +1,70 @@
-<p>offer-mgmt works!</p>
+<div class="main-wrapper">
+    <div class="container-fluid">
+      <div class="main-heading my-3">
+        <h3>Offer Management</h3>
+      </div>
+  
+      <div class="row align-items-center">
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
+          <mat-form-field appearance="outline">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Search by Name" #input>
+          </mat-form-field>
+        </div>
+  
+        <div class="col-sm-12 col-md-6 col-lg-3 mb-3 text-center text-md-right">
+          <button mat-raised-button color="primary" (click)="openAddEditDialog('Add New Offer')">Add Offer</button>
+        </div>
+      </div>
+  
+      <div class="table-responsive mb-5">
+        <div class="w-100">
+          <table mat-table [dataSource]="dataSource" matSort>
+  
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Sr. No </th>
+              <td mat-cell *matCellDef="let row"> {{row.serialNo}} </td>
+            </ng-container>
+  
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+              <td mat-cell *matCellDef="let row"> {{row?.amount}} </td>
+            </ng-container>
+  
+            <!-- Progress Column -->
+            <ng-container matColumnDef="progress">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Percentage </th>
+              <td mat-cell *matCellDef="let row"> {{row?.percentage}}% </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> Actions 
+                <div class="d-flex justify-content-center gap-3 align-items-center">
+                  <span class="action-head">Edit</span>
+                  <span class="action-head">Delete</span>
+                </div>  
+              </th>
+              <td mat-cell *matCellDef="let element">
+                <div class="action-icon d-flex justify-content-center gap-3 align-items-center ">
+                  <span class="action-head"><mat-icon matTooltip="Edit">create</mat-icon></span>
+                  <span class="action-head"><mat-slide-toggle></mat-slide-toggle></span>
+                </div>
+              </td>
+            </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+          </table>
+          <mat-paginator [pageSizeOptions]="pageSizeOptions" [length]="totalItems" aria-label="Select page of users"></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+  

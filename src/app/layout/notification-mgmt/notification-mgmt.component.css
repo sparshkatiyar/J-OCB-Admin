@@ -1,0 +1,7 @@
+@media only screen and (max-width: 600px) {
+    /* Adjust styles for smaller screens */
+    .col-md-6 {
+      width: 100%;
+    }
+  }
+  

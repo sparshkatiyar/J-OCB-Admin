@@ -16,7 +16,7 @@ import { BookingMgmtComponent } from './booking-mgmt/booking-mgmt.component';
 import { CommissionMgmtComponent } from './commission-mgmt/commission-mgmt.component';
 import { OfferMgmtComponent } from './offer-mgmt/offer-mgmt.component';
 import { NotificationMgmtComponent } from './notification-mgmt/notification-mgmt.component';
-
+import { AddEditOfferComponent } from './dialog/add-edit-offer/add-edit-offer.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import { NotificationMgmtComponent } from './notification-mgmt/notification-mgmt
     CommissionMgmtComponent,
     OfferMgmtComponent,
     NotificationMgmtComponent,
+    AddEditOfferComponent,
   ],
   imports: [
     CommonModule,
@@ -38,7 +39,7 @@ import { NotificationMgmtComponent } from './notification-mgmt/notification-mgmt
     SharedModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ]
 })
 export class LayoutModule { }
