@@ -17,6 +17,7 @@ import { CommissionMgmtComponent } from './commission-mgmt/commission-mgmt.compo
 import { OfferMgmtComponent } from './offer-mgmt/offer-mgmt.component';
 import { NotificationMgmtComponent } from './notification-mgmt/notification-mgmt.component';
 import { AddEditOfferComponent } from './dialog/add-edit-offer/add-edit-offer.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AddEditOfferComponent } from './dialog/add-edit-offer/add-edit-offer.co
     OfferMgmtComponent,
     NotificationMgmtComponent,
     AddEditOfferComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,

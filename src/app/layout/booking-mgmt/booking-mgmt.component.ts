@@ -28,6 +28,7 @@ export class BookingMgmtComponent implements AfterViewInit {
   constructor(public dialog :MatDialog, private api : ApiService) { }
 
   ngOnInit(): void {
+    this.getBookingData()
   }
 
   ngAfterViewInit() {
@@ -43,7 +44,7 @@ export class BookingMgmtComponent implements AfterViewInit {
     }
   }
 
-  getDriverData() {
+  getBookingData() {
     this.api.get("booking").subscribe({
       next: (res: any) => {
         this.bookingData = res.data.result.rows;
