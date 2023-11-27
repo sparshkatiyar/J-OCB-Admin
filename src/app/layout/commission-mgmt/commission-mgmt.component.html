@@ -8,11 +8,11 @@
         <div class="col-md-12 col-lg-6 mb-3">
           <mat-form-field appearance="outline" class="w-100">
             <mat-label>Enter commission...</mat-label>
-            <input matInput placeholder="Enter Commission..." #input>
+            <input matInput placeholder="Enter Commission..." [(ngModel)]="commissionData" #input>
           </mat-form-field>
         </div>
         <div class="col-md-12 col-lg-6 mb-3 d-flex justify-content-lg-end justify-content-center">
-          <button mat-raised-button color="primary">Update</button>
+          <button mat-raised-button color="primary" (click)="updatedCommission()">Update</button>
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ export interface UserData {
   styleUrls: ['./booking-mgmt.component.css']
 })
 export class BookingMgmtComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'fruit','action' ];
+  displayedColumns: string[] = ['sr_no', 'booking_date_time', 'amount', 'driver','driver_mobile','user','user_mobile', 'status' ];
   dataSource!: MatTableDataSource<UserData>;
   @ViewChild("MatPaginator") MatPaginator!: MatPaginator;
 
@@ -45,7 +45,7 @@ export class BookingMgmtComponent implements AfterViewInit {
   }
 
   getBookingData() {
-    this.api.get("booking").subscribe({
+    this.api.get("list/booking").subscribe({
       next: (res: any) => {
         this.bookingData = res.data.result.rows;
         this.dataSource = new MatTableDataSource(this.bookingData);
