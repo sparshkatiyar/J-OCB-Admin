@@ -1,6 +1,6 @@
 <div class="main-wrapper">
     <div class="container-fluid">
-      <form [formGroup]="notiifcationForm">
+      <form [formGroup]="notifcationForm">
         <div class="main-heading my-3">
           <div class="user-man">
             <h3>Notification Management</h3>
@@ -24,13 +24,10 @@
               <label for="selectUser">Select User</label>
               <mat-form-field appearance="outline">
                 <mat-label>Search User</mat-label>
-                <mat-select multiple>
-                  <mat-option [value]="1">Hi User 1</mat-option>
-                  <mat-option [value]="2">Hi User 2</mat-option>
-                  <mat-option [value]="3">Hi User 3</mat-option>
-                  <mat-option [value]="4">Hi User 4</mat-option>
-                  <mat-option [value]="5">Hi User 5</mat-option>
-                  <mat-option [value]="6">Hi User 6</mat-option>
+                <mat-select formControlName="userId" multiple>
+                  <mat-option *ngFor="let userOption of userData" [value]="userOption.id">
+                    {{ userOption?.name }}
+                  </mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
@@ -38,21 +35,18 @@
               <label for="selectDriver">Select Driver</label>
               <mat-form-field appearance="outline">
                 <mat-label>Search Driver</mat-label>
-                <mat-select multiple>
-                  <mat-option [value]="1">Hi User 1</mat-option>
-                  <mat-option [value]="2">Hi User 2</mat-option>
-                  <mat-option [value]="3">Hi User 3</mat-option>
-                  <mat-option [value]="4">Hi User 4</mat-option>
-                  <mat-option [value]="5">Hi User 5</mat-option>
-                  <mat-option [value]="6">Hi User 6</mat-option>
-                </mat-select>
+                <mat-select formControlName="driverId" multiple>
+                  <mat-option *ngFor="let driverOption of driverData" [value]="driverOption.id">
+                    {{ driverOption?.name }}
+                  </mat-option>
+                </mat-select>              
               </mat-form-field>
             </div>
           </div>
         </div>
         <!-- Submit Button Section -->
         <div class="text-center mt-3">
-          <button mat-raised-button color="primary">Send Notification</button>
+          <button mat-raised-button color="primary" (click)="sendNotification()">Send Notification</button>
         </div>
       </form>
     </div>

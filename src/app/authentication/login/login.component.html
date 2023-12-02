@@ -1,4 +1,4 @@
-<section  class="authentication">
+<section class="authentication">
     <div class="container-fluid">
         <div class="row  vh-100 align-items-center">
 
@@ -9,14 +9,14 @@
                             <div class="left-auth-logo text-center">
                                 <img src="/assets/images/logo-light.png" alt="logo">
                             </div>
-                          </div>
+                        </div>
 
                         <div class="card-body mt-3">
 
                             <div class="auth-box-left-text">
-                                <h5>DIGGING CONVENIENCE</h5>    
+                                <h5>DIGGING CONVENIENCE</h5>
                                 <h1>BOOK YOUR JCB</h1>
-                                <h5>Anytime, Anywhere</h5>    
+                                <h5>Anytime, Anywhere</h5>
                             </div>
 
                         </div>
@@ -35,24 +35,32 @@
                         </div>
 
                         <div class="card-body">
-                            <form [formGroup]="LoginForm"> 
+                            <form [formGroup]="LoginForm">
                                 <div class="example-container">
 
                                     <mat-form-field appearance="outline" class="w-100 mb-4">
                                         <mat-label>Email ID</mat-label>
-                                        <input matInput placeholder="Enter Email ID" formControlName = "email">
+                                        <input matInput placeholder="Enter Email ID" formControlName="email">
                                     </mat-form-field>
                                     <mat-form-field appearance="outline" class="w-100 mb-4">
-                                      <mat-label>Enter your password</mat-label>
-                                      <input matInput [type]="hide ? 'password' : 'text'" formControlName = "password">
-                                      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                                      </button>
+                                        <mat-label>Enter your password</mat-label>
+                                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                                        <button mat-icon-button matSuffix (click)="hide = !hide"
+                                            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                        </button>
                                     </mat-form-field>
                                 </div>
                                 <div class="auth-btn">
-                                    <button mat-raised-button color="primary" class="w-100 mb-2 py-1" (click)="login()">Submit</button>
-                                    <a href="javascript:void(0)" class="d-block text-end" routerLink="/forget-password">Forget Password ?</a>
+                                    <button mat-raised-button color="primary" class="w-100 mb-2 py-1"
+                                        (click)="login()">Submit</button>
+                                    <div class="remember-me-checkbox mb-4">
+                                        <mat-checkbox formControlName="rememberMe">Remember Me</mat-checkbox>
+                                        <a href="javascript:void(0)" class="d-block text-end"
+                                        routerLink="/forget-password">Forget Password ?</a>
+                                    </div>
+        
+                                    
                                 </div>
                             </form>
                         </div>

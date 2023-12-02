@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/service/api.service';
 import { ToastrService } from 'ngx-toastr';
@@ -14,25 +14,44 @@ export class LoginComponent implements OnInit {
   error:any
   loginData: any;
   submitted: Boolean = false;
-  constructor(private api : ApiService, private router : Router, private toastr: ToastrService) {}
+  LoginForm: FormGroup;
+  constructor(private api : ApiService, private router : Router, private toastr: ToastrService, private fb: FormBuilder) {
+    this.LoginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required],
+      rememberMe: [false],
+    });
+
+    const storedCredentials = localStorage.getItem('rememberedCredentials');
+    if (storedCredentials) {
+      const credentials = JSON.parse(storedCredentials);
+      this.LoginForm.patchValue(credentials);
+    }
+  }
 
   ngOnInit(): void {
   }
-  LoginForm: FormGroup = new FormGroup({
-    email: new FormControl("", Validators.required),
-    password: new FormControl("", Validators.required),
-  });
+  
 
   login(){
     this.submitted = true
     if(this.LoginForm.invalid){
       return
     }
-    let data = this.LoginForm.value
-    this.api.post('login', data).subscribe({
+    const { email, password, rememberMe } = this.LoginForm.value;
+    const apiData = { email, password };
+    // let data = this.LoginForm.value
+
+    this.api.post('login', apiData).subscribe({
       next : (res : any) =>{
+
         this.loginData =  res.data
         sessionStorage.setItem('OJCB', JSON.stringify(this.loginData));
+        if (rememberMe) {
+          localStorage.setItem('rememberedCredentials', JSON.stringify({ email,password }));
+        } else {
+          localStorage.removeItem('rememberedCredentials');
+        }
         this.router.navigateByUrl("/home/dashboard")
         this.toastr.success("Admin login successfully.")
       }, 
