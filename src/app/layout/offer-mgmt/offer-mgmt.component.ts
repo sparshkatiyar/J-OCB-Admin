@@ -20,7 +20,7 @@ export interface UserData {
 })
 export class OfferMgmtComponent implements AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'name', 'progress','action' ];
+  displayedColumns: string[] = ['id', 'name', 'percentage','amount','minimum_price','upto','description','start_date','end_date','action' ];
   dataSource!: MatTableDataSource<UserData>;
   @ViewChild("MatPaginator") MatPaginator!: MatPaginator;
 
@@ -63,16 +63,25 @@ export class OfferMgmtComponent implements AfterViewInit {
     });
   }
 
-  openAddEditDialog(title : any): void {
+  openAddEditDialog(title : any, value : any): void {
     const dialogRef = this.dialog.open(AddEditOfferComponent, {
-      data: { title: title }
+      data: { title: title, value : value }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('Dialog closed with result:', result);
-        // Perform actions with the result data
-      }
+      this.getOfferList()
     });
+  }
+
+  delete(id : any) {
+    this.api.delete('delete-offer', id).subscribe({
+      next : (res : any)=>{
+        console.log('delete done...')
+        this.getOfferList()
+      },
+      error(err) {
+        console.log(err)
+      }, 
+    })
   }
 }

@@ -1,26 +1,73 @@
 <div class="flex-container column">
-    <h2 mat-dialog-title>{{ data.title }}</h2>
-    <div mat-dialog-content class="row">
-      <form class="flex-container">
+  <h2 mat-dialog-title>{{ data.title }}</h2>
+  <div mat-dialog-content class="row">
+    <form class="flex-container" [formGroup]="offerForm">
+      <div class="flex-item-quartet">
+        <div class="flex-item-pair">
+          <div class="flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Enter Name..." formControlName = "name">
+            </mat-form-field>
+          </div>
+          <div class="flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Amount</mat-label>
+              <input matInput placeholder="Enter Amount..." formControlName = "amount">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="flex-item-pair">
+          <div class="flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Percentage</mat-label>
+              <input matInput placeholder="Enter Percentage..." formControlName = "percentage">
+            </mat-form-field>
+          </div>
+
+          <div class="flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Upto</mat-label>
+              <input matInput placeholder="Enter Upto..." formControlName = "upto">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="flex-item-pair">
+          <div class="flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Minimum Price</mat-label>
+              <input matInput placeholder="Enter Minimum Price..." formControlName = "minimum_price">
+            </mat-form-field>
+          </div>
+          <div class="flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>Start Date</mat-label>
+              <input matInput type="date" placeholder="Select Start Date..." formControlName = "start_date">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="flex-item-pair">
+          <div class="flex-item">
+            <mat-form-field appearance="outline">
+              <mat-label>End Date</mat-label>
+              <input matInput type="date" placeholder="Select End Date..." formControlName = "end_date">
+            </mat-form-field>
+          </div>
+        </div>
         <div class="flex-item">
           <mat-form-field appearance="outline">
-            <mat-label>Amount</mat-label>
-            <input matInput placeholder="Enter Commission...">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Enter Description..." formControlName = "description"></textarea>
           </mat-form-field>
         </div>
-  
-        <div class="flex-item">
-          <mat-form-field appearance="outline">
-            <mat-label>Percentage</mat-label>
-            <input matInput placeholder="Enter Commission...">
-          </mat-form-field>
-        </div>
-      </form>
-    </div>
-    <div mat-dialog-actions class="flex-container">
-      <div class="flex-item text-center">
-        <button mat-raised-button color="primary">Add</button>
       </div>
+    </form>
+  </div>
+  <div mat-dialog-actions class="flex-container">
+    <div class="flex-item text-center">
+      <button mat-raised-button color="primary" (click)="addEdit()">{{data.title}}</button>
     </div>
   </div>
-  
+</div>

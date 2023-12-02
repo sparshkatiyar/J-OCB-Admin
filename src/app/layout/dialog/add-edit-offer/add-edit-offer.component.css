@@ -12,6 +12,10 @@
     margin: 0 10px; /* Adjust as needed */
   }
   
+  .modal-content {
+    overflow: hidden;
+  }
+  
   @media screen and (max-width: 600px) {
     .flex-container,
     .flex-container.column {
