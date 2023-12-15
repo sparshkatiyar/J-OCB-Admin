@@ -9,6 +9,7 @@ import { BookingMgmtComponent } from './booking-mgmt/booking-mgmt.component';
 import { CommissionMgmtComponent } from './commission-mgmt/commission-mgmt.component';
 import { OfferMgmtComponent } from './offer-mgmt/offer-mgmt.component';
 import { NotificationMgmtComponent } from './notification-mgmt/notification-mgmt.component';
+import { NotificationListComponent } from './notification-list/notification-list.component';
 
 const routes: Routes = [
   {path:'', component:LayoutComponent, children:[
@@ -20,9 +21,8 @@ const routes: Routes = [
     {path:'booking-mgmt', component:BookingMgmtComponent},
     {path:'commission-mgmt', component:CommissionMgmtComponent},
     {path:'offer-mgmt', component:OfferMgmtComponent},
+    {path:'notification-list', component:NotificationListComponent},
     {path:'notification-mgmt', component:NotificationMgmtComponent},
-
-
   ]}
 ];
 

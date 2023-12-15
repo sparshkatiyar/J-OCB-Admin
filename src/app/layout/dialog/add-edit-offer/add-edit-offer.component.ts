@@ -39,6 +39,8 @@ export class AddEditOfferComponent implements OnInit {
       start_date: ['', Validators.required],
       end_date: ['', Validators.required],
       minimum_price: ['', Validators.required],
+      title: ['', Validators.required],
+      details: ['', Validators.required],
     });
   }
 
@@ -54,6 +56,8 @@ export class AddEditOfferComponent implements OnInit {
       start_date :  startDate, 
       end_date :  endDate, 
       minimum_price : String(this.data.value.minimum_price), 
+      title : this.data.value.title, 
+      details : this.data.value.details, 
     })
   }
 

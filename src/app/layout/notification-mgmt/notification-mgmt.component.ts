@@ -52,6 +52,7 @@ export class NotificationMgmtComponent implements OnInit {
     this.api.post('send-notification', data).subscribe({
       next : (res : any)=>{
         this.toastr.success('Notification sent successfully.')
+        this.router.navigateByUrl('/home/notification-list')
       },error:(err)=> {
         this.toastr.error('something went wrong.')
       },

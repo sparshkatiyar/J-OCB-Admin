@@ -13,17 +13,14 @@
   .mat-toolbar.mat-primary {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: 4;
     /* background:  linear-gradient(98.97deg, #FD7208 5.15%, #fc900214 105.73%)!important; */
     background:  linear-gradient(88deg, #FD7208 5.15%, #000000c7 105.73%)!important;
     ;
   }
-  
-
-
   mat-sidenav{
     background: linear-gradient(180deg, #1A1A1D 8.02%, #695033 69.19%);
- }
+  }
 
 
 
