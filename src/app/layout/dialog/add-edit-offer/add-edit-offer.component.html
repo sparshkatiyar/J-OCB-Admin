@@ -88,8 +88,9 @@
 
 <div class="flex-container column">
   <h2 mat-dialog-title>{{ data.title }}</h2>
+  <form class="flex-container" [formGroup]="offerForm">
   <div mat-dialog-content class="flex-container">
-    <form class="flex-container" [formGroup]="offerForm">
+    
       <div class="flex-item">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
@@ -132,13 +133,13 @@
           <input matInput type="date" placeholder="Select End Date..." formControlName = "end_date">
         </mat-form-field>
       </div>
-    </form>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Enter Description..." cols="100" formControlName = "description" ></textarea>
+      </mat-form-field>
   </div>
-  <mat-form-field appearance="outline">
-    <mat-label>Description</mat-label>
-    <textarea matInput placeholder="Enter Description..." formControlName = "description"></textarea>
-  </mat-form-field>
 
+  </form>
   <div mat-dialog-actions class="flex-container">
     <div class="flex-item text-center">
       <button mat-raised-button color="primary" (click)="addEdit()">{{ data.title }}</button>

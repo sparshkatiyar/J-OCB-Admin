@@ -6,7 +6,7 @@
 
         <div class="row align-items-center">
             <div class="col-md-6 col-lg-3 mb-3">
-                <button mat-raised-button color="primary" routerLink="/home/notification-mgmt">Add Offer</button>
+                <button mat-raised-button color="primary" routerLink="/home/notification-mgmt">Send Notification</button>
             </div>
         </div>
 
@@ -41,7 +41,7 @@
                             User Name
                         </th>
                         <td mat-cell *matCellDef="let row">
-                            {{ row?.userId ? row?.userId : '--' }}
+                            {{ row?.user ? row?.user?.name : '--' }}
                         </td>
                     </ng-container>
                     <ng-container matColumnDef="driverId">
@@ -49,7 +49,7 @@
                             Driver Name
                         </th>
                         <td mat-cell *matCellDef="let row">
-                            {{ row?.driverId ? row?.driverId : '--' }}
+                            {{ row?.driver ? row?.driver?.name : '--' }}
                         </td>
                     </ng-container>
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
