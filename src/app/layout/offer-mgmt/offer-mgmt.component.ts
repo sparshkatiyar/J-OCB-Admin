@@ -72,6 +72,15 @@ export class OfferMgmtComponent implements AfterViewInit {
       this.getOfferList()
     });
   }
+  openDelete(value : any): void {
+    const dialogRef = this.dialog.open(DeleteComponent, {
+      data: {  value : value }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.getOfferList()
+    });
+  }
 
   delete(id : any) {
     this.api.delete('delete-offer', id).subscribe({

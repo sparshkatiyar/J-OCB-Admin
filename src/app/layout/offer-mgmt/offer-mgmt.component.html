@@ -77,7 +77,7 @@
               <td mat-cell *matCellDef="let element">
                 <div class="action-icon d-flex justify-content-center gap-3 align-items-center ">
                   <span class="action-head"><mat-icon matTooltip="Edit" (click)="openAddEditDialog('Edit Offer', element)" >create</mat-icon></span>
-                  <span class="action-head"><mat-icon class="red-color" (click) = "delete(element?.id)">delete</mat-icon></span>
+                  <span class="action-head"><mat-icon class="red-color" (click) = "openDelete(element?.id)">delete</mat-icon></span>
                 </div>
               </td>
             </ng-container>
